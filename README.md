@@ -40,7 +40,7 @@ The CSS uses a **central theme** defined in `index.css` for consistency, along w
 Create a `.env` file in the root:
 
 ```env
-VITE_API_BASE_URL=http://localhost:4000/api
+VITE_API_BASE_URL=https://movie-ticket-booking-p8ne.onrender.com/api
 ```
 
 ---
@@ -67,7 +67,7 @@ The frontend should be running at http://localhost:5173
 
 Deployed on `Netlify` [https://www.netlify.com]
 
-Live Link: http://localhost:5137 [will change after deployed]
+Live Link: https://movie-ticket-booking-assignment.netlify.app
 
 ---
 
