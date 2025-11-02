@@ -1,0 +1,291 @@
+.booking-page {
+  min-height: calc(100vh - 75px);
+  background: radial-gradient(circle at top, #1a1a1a 0%, #0d0d0d 100%);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 3%;
+}
+
+/* Header */
+.booking-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.booking-header h2 {
+  font-size: 2.2rem;
+  color: var(--accent-color);
+  text-shadow: 0 3px 12px rgba(255, 215, 0, 0.4);
+  margin-bottom: 0.5rem;
+}
+
+.booking-header .showtime {
+  color: #bbb;
+  font-size: 1rem;
+}
+
+/* 🎞️ Theater Section */
+.theater {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 2rem;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  margin-bottom: 2rem;
+}
+
+/* Screen with perspective */
+.screen {
+  background: linear-gradient(to right, #e50914, #b0060f);
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 0.8rem 0;
+  border-radius: 6px;
+  box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+  transform: perspective(300px) rotateX(15deg);
+  margin-bottom: 2rem;
+}
+
+/* 🪑 Seat Rows */
+.seats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.seat-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.row-label {
+  width: 25px;
+  text-align: right;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--accent-color);
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+  user-select: none;
+}
+
+/* ✅ Proper horizontal seat rows */
+.seat-row .seats-grid {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.seat {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #222;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.seat:hover {
+  background: #333;
+  transform: scale(1.1);
+}
+
+/* Seat states */
+.seat.selected {
+  background: var(--primary-color);
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.6);
+  transform: scale(1.05);
+}
+
+.seat.booked {
+  background: #555;
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* Legend */
+.seat-legend {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  color: #bbb;
+  font-size: 0.9rem;
+}
+
+.seat-legend div {
+  display: flex;
+  align-items: center;
+}
+
+.legend {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  margin-right: 0.4rem;
+}
+
+.legend.available {
+  border: 1px solid #333;
+}
+.legend.selected {
+  background: var(--primary-color);
+}
+.legend.booked {
+  background: #555;
+}
+
+/* 🎟️ Booking Summary */
+.booking-summary {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+}
+
+.booking-summary p {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.booking-summary .error-text {
+  color: var(--primary-color)
+}
+
+.confirm-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.confirm-btn:hover {
+  background: #b0060f;
+  box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+  transform: translateY(-2px);
+}
+
+.confirm-btn:disabled {
+  background: #333;
+  color: #777;
+  cursor: not-allowed;
+  transform: translateY(0px);
+  box-shadow: none;
+}
+
+/* Error and Loader styles */
+.booking-page.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.booking-page.error-page h2 {
+  margin: 0;
+}
+
+.booking-page.error-page .error-text {
+  margin: 0;
+  color: #ff4d4d;
+  font-weight: 500;
+}
+
+.booking-page.error-page button {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.booking-page.error-page button:hover {
+  background-color: var(--accent-color);
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 768px) {
+  .booking-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .theater {
+    padding: 1.5rem;
+  }
+
+  .seats-grid {
+    max-width: 400px;
+    gap: 8px;
+  }
+
+  .seat {
+    width: 36px;
+    height: 36px;
+  }
+
+  .booking-summary {
+    width: 100%;
+  }
+
+  .row-label {
+    font-size: 0.9rem;
+    width: 20px;
+  }
+}
+
+/* Medium screens (phones) */
+@media (max-width: 480px) {
+  .booking-page {
+    padding: 1rem;
+  }
+
+  .booking-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .theater {
+    padding: 1rem;
+  }
+
+  .seats-grid {
+    max-width: 300px;
+  }
+
+  .seat {
+    width: 32px;
+    height: 32px;
+  }
+
+  .confirm-btn {
+    width: 100%;
+    padding: 0.9rem;
+  }
+}

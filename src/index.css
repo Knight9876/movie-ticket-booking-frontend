@@ -1,0 +1,67 @@
+/* global.css (or in App.css / index.css) */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+  /* 🎬 Color palette */
+  --primary-color: #e50914;
+  --background-color: #121212;
+  --surface-color: #1f1f1f;
+  --text-color: #ffffff;
+  --accent-color: #ffd700;
+
+  /* ✨ Typography */
+  --font-family: "Poppins", sans-serif;
+
+  /* Layout constants */
+  --max-width: 1200px;
+  --transition-speed: 0.3s;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling (optional, gives it a polished feel) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b0060f;
+}
+
+/* Links and button defaults */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+button {
+  font-family: var(--font-family);
+}
+
+/* Page container utility (optional for consistent layouts) */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem;
+}

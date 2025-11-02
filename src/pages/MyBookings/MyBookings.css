@@ -1,0 +1,160 @@
+.my-bookings-page {
+  min-height: calc(100vh - 75px);
+  background: radial-gradient(circle at top, #1a1a1a 0%, #0d0d0d 100%);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  padding: 0 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Page Title */
+.page-title {
+  color: var(--accent-color);
+  text-shadow: 0 3px 12px rgba(255, 215, 0, 0.4);
+  font-size: 2.2rem;
+  font-weight: 600;
+  padding-top: 3rem;
+  text-align: center;
+}
+
+/* Grid layout for bookings */
+.bookings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: var(--max-width);
+  margin-top: 1rem;
+}
+
+/* Booking card style */
+.card {
+  background: linear-gradient(145deg, #1c1c1c, #181818);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* Movie title */
+.card h3 {
+  color: var(--accent-color);
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 0;
+}
+
+/* Booking details */
+.card p {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin: 0.4rem 0;
+}
+
+.card p b {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+/* Empty state */
+.bookings-grid p {
+  color: #bbb;
+  font-size: 1.1rem;
+}
+
+.error-page {
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.error-box {
+  color: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem auto;
+}
+
+.error-box .error-title {
+  margin: 0;
+  color: #ff4d4d;
+}
+
+.error-box p {
+  margin: 0;
+  color: #ccc;
+}
+
+.error-box button {
+  background-color: var(--primary-color);
+  border: none;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.error-box button:hover {
+  background-color: var(--accent-color);
+  transform: scale(1.05);
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 1.75rem;
+  }
+
+  .bookings-grid {
+    gap: 1.5rem;
+  }
+
+  .card {
+    padding: 1.25rem;
+  }
+}
+
+/* Medium screens (phones) */
+@media (max-width: 480px) {
+  .my-bookings-page {
+    padding: 0 1rem;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .bookings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .card h3 {
+    font-size: 1.15rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+}

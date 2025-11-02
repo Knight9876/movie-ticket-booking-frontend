@@ -1,0 +1,180 @@
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom right,
+    rgba(18, 18, 18, 0.95),
+    rgba(31, 31, 31, 0.95)
+  );
+  color: var(--text-color);
+  font-family: var(--font-family);
+}
+
+.auth-container h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Form styling */
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  background-color: var(--surface-color);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Input group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #cccccc;
+  letter-spacing: 0.3px;
+}
+
+.auth-container input {
+  background-color: #2a2a2a;
+  border: 1px solid #333;
+  color: var(--text-color);
+  padding: 0.8rem 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.auth-container input::placeholder {
+  color: #888;
+}
+
+.auth-container input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 6px rgba(229, 9, 20, 0.4);
+}
+
+/* Button */
+.auth-container button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.9rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.auth-container button:hover {
+  background-color: #b0060f;
+  transform: scale(1.03);
+}
+
+.auth-container button:disabled {
+  opacity: 0.5;
+}
+
+/* Error message */
+.error-message {
+  color: #ff4d4d;
+  font-weight: 500;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* Prevent white/yellow autofill background on dark theme */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #2a2a2a inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  caret-color: #ffffff;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/* For Firefox */
+input:-moz-autofill {
+  box-shadow: 0 0 0px 1000px #2a2a2a inset !important;
+  -moz-text-fill-color: #ffffff !important;
+}
+
+/* Auth switch text */
+.switch-auth {
+  margin-top: 1.2rem;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.switch-auth a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.switch-auth a:hover {
+  color: var(--primary-color);
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 1.5rem;
+  }
+
+  .auth-container form {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+
+  .auth-container h2 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Small screens (phones) */
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 1rem;
+  }
+
+  .auth-container form {
+    padding: 1.25rem;
+    max-width: 100%;
+  }
+
+  .auth-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+  }
+
+  .auth-container input,
+  .auth-container button {
+    font-size: 0.9rem;
+    padding: 0.7rem 0.9rem;
+  }
+
+  .switch-auth {
+    font-size: 0.85rem;
+  }
+}
