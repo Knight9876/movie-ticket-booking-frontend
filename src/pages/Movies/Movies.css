@@ -1,5 +1,5 @@
 .movies-page {
-  min-height: calc(100vh - 75px);
+  min-height: calc(100dvh - 75px);
   background: radial-gradient(circle at top, #1a1a1a 0%, #0d0d0d 100%);
   color: var(--text-color);
   font-family: var(--font-family);

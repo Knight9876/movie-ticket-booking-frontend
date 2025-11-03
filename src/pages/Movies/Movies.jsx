@@ -67,10 +67,9 @@ export default function Movies() {
 
   return (
     <div className="movies-page">
-      {/* 🔎 Search Input */}
       <input
         type="text"
-        placeholder="Search by title or genre..."
+        placeholder="🔍 Search by title or genre..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         className="search-bar"
